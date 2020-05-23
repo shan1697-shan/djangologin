@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if user.is_authenticated %}
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+</head>
+<body>
+    <h1>This is a checking page</h1>
+    <h4>Hello, {{user.first_name}}</h4>
+    <a href="http://127.0.0.1:8000/log/logout/"><button>LogOut</button></a>
+
+</body>
+{% else %}
+    <script> window.location.replace('http://127.0.0.1:8000/log/');</script>
+{% endif %}
+
+</html>

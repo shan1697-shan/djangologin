@@ -1,0 +1,31 @@
+{%extends 'log/extnd.html'%}
+{% block title %}Login{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <h4>Login To YourAccount</h4>
+                <form class="form-group" method="POST">{% csrf_token %}
+                    <label>Username:</label>
+                    <input type="text" name="uname" class="form-control">
+                    <label>Password:</label>
+                    <input type="password" name="pass" class="form-control">
+                    <button type="submit" name="submit" class="btn btn-primary my-4" style="margin-left:100px;">LOGIN</button>
+                    <a href="log/"><button class="btn btn-danger ">CANCEL</button></a>
+                </form>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+<script>
+    {% for message in messages %}
+    alert('{{message}}');
+    {% endfor %}
+</script>
+
+{% endblock %}
